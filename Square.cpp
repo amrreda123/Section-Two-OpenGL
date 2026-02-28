@@ -1,61 +1,42 @@
-# 🎨 OpenGL Section Two : Geometry & Primitive Types
+#include <GL/glut.h>
 
-[![YouTube View](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY)
-[![OpenGL Version](https://img.shields.io/badge/OpenGL-2.1%2B-blue?style=for-the-badge&logo=opengl)](https://www.opengl.org/)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VbBVXNn0029VbBVXNn)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/amr-reda-79326b27b/)
-
-هذا المستودع يحتوي على الكود المشروح في الجزء الثاني من سلسلة تعلم OpenGL. نركز هنا على كيفية رسم الأشكال الهندسية والتحكم في خصائص العرض (Polygon Modes).
-
----
-
-## 📺 الفيديوهات السابقة (Course Journey)
-
-* **الدرس الأول:** [كيفية إنشاء نافذة ورسم أول نقطة في OpenGL](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY) 💻
-* **الدرس الثاني:** الرسم المتقدم والتحكم في المضلعات (هذا المستودع).
-
----
-
-## 📸 مخرجات الكود (Output Screenshot)
-
-توضح الصورة التالية النتيجة النهائية لتشغيل الكود الحالي:
-
-> [!IMPORTANT]
-> **تأكد أن ملف الصورة موجود في نفس الفولدر وبنفس الاسم (Screenshot).**
-> 
-> ![Output Preview](Screenshot)
-
----
-
-## 🛠️ تحليل دالة الرسم (Deep Dive into `display()`)
-
-استخدمنا في هذا الجزء مجموعة من الدوال الأساسية للتحكم في كيفية ظهور الشكل على الشاشة:
-
-### 1️⃣ أنماط المضلعات (Polygon Modes)
-تتحكم دالة `glPolygonMode` في كيفية معالجة الأوجه:
-| Mode | الوصف | الفائدة |
-| :--- | :--- | :--- |
-| `GL_POINT` | رسم النقاط فقط | مفيد لتصحيح مواضع الـ Vertices. |
-| `GL_LINE` | الهيكل السلكي (Wireframe) | رؤية "الهيكل العظمي" للموديل. |
-| `GL_FILL` | التعبئة الكاملة (Solid) | الشكل النهائي الملون. |
-
-### 2️⃣ رسم الخطوط والأشكال (Primitives)
-في الكود الحالي، نستخدم `GL_LINE_LOOP` لرسم حدود المربع:
-
-```cpp
 void display() {
-    glClear(GL_COLOR_BUFFER_BIT); // تنظيف الشاشة
-    glColor3f(0.0, 1.0, 0.3);     // اختيار اللون الأخضر
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0.0, 1.0, 0.3);
+    // glPointSize(10.0f);
 
-    // تحديد وضع الرسم (خطوط للهيكل الأمامي والخلفي)
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-    glBegin(GL_LINE_LOOP);
-    glVertex2f(-0.3f, -0.3f); // اليسار السفلي
-    glVertex2f(-0.3f, 0.3f);  // اليسار العلوي
-    glVertex2f(0.3f, 0.3f);   // اليمين العلوي
-    glVertex2f(0.3f, -0.3f);  // اليمين السفلي
+    /*
+        glPolygonMode(face, mode)
+        face: GL_FRONT, GL_BACK, GL_FRONT_AND_BACK
+        mode:
+                GL_POINT => Point mode,
+                GL_LINE => Wireframe mode, 
+                GL_FILL => Solid mode
+    */
+    // glLineWidth(2.0f);
+    // glBegin(GL_LINE_STRIP); not closed
+    // glBegin(GL_LINE_LOOP);
+    glBegin(GL_QUADS);
+    glVertex2f(-0.3f, -0.3f);   // left-bottom
+    glVertex2f(-0.3f, 0.3f);   // left-top
+    glVertex2f(0.3f, 0.3f);   // right-top
+    glVertex2f(0.3f, -0.3f); // right-bottom
     glEnd();
 
-    glFlush(); // تنفيذ الأوامر فوراً
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("2D Square");
+
+    glClearColor(0.0, 0.0, 0.0, 1.0);  
+    gluOrtho2D(-1, 1, -1, 1);
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
 }

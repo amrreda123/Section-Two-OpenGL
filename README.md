@@ -1,23 +1,29 @@
 # 🎨 OpenGL Section Two : Geometry & Primitive Types
 
-[![YouTube View](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](رابط_الفيديو_هنا)
+[![YouTube View](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY)
 [![OpenGL Version](https://img.shields.io/badge/OpenGL-2.1%2B-blue?style=for-the-badge&logo=opengl)](https://www.opengl.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VbBVXNn0029VbBVXNn)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/amr-reda-79326b27b/)
 
 هذا المستودع يحتوي على الكود المشروح في الجزء الثاني من سلسلة تعلم OpenGL. نركز هنا على كيفية رسم الأشكال الهندسية والتحكم في خصائص العرض (Polygon Modes).
 
-> [!IMPORTANT]
-> هذا الدرس يعتمد على ما تم شرحه في **[الفيديو السابق (إعداد البيئة)](رابط_الفيديو_هنا)**. تأكد من مشاهدته أولاً لتجهيز مكتبات GLUT/FreeGLUT.
+---
+
+## 📺 الفيديوهات السابقة (Course Journey)
+
+* **الدرس الأول:** [كيفية إنشاء نافذة ورسم أول نقطة في OpenGL](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY) 💻
+* **الدرس الثاني:** الرسم المتقدم والتحكم في المضلعات (هذا المستودع).
 
 ---
 
-## 📸 مخرجات الكود (Current Output)
+## 📸 مخرجات الكود (Output Screenshot)
 
-توضح الصورة التالية الفرق بين استخدام `GL_LINE_LOOP` و `GL_QUADS`:
+توضح الصورة التالية النتيجة النهائية لتشغيل الكود الحالي:
 
-> [!TIP]
-> **ضع صورة الـ Screenshot الخاصة بك هنا لتظهر للمتابعين النتيجة.**
-> ![Output Preview](رابط_الصورة_هنا)
+> [!IMPORTANT]
+> **تأكد أن ملف الصورة موجود في نفس الفولدر وبنفس الاسم (Screenshot).**
+> 
+> ![Output Preview](Screenshot)
 
 ---
 
@@ -32,8 +38,6 @@
 | `GL_POINT` | رسم النقاط فقط | مفيد لتصحيح مواضع الـ Vertices. |
 | `GL_LINE` | الهيكل السلكي (Wireframe) | رؤية "الهيكل العظمي" للموديل. |
 | `GL_FILL` | التعبئة الكاملة (Solid) | الشكل النهائي الملون. |
-
-
 
 ### 2️⃣ رسم الخطوط والأشكال (Primitives)
 في الكود الحالي، نستخدم `GL_LINE_LOOP` لرسم حدود المربع:
