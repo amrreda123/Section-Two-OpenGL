@@ -23,7 +23,7 @@
 > [!IMPORTANT]
 > **تأكد أن ملف الصورة موجود في نفس الفولدر وبنفس الاسم (Screenshot).**
 > 
-> ![Output Preview](image)
+> ![Output Preview](image.png)
 
 ---
 
