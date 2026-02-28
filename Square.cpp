@@ -1,20 +1,28 @@
 # 🎨 OpenGL Section Two : Geometry & Primitive Types
 
-[![YouTube View](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](رابط_الفيديو_هنا)
+[![YouTube View](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY)
 [![OpenGL Version](https://img.shields.io/badge/OpenGL-2.1%2B-blue?style=for-the-badge&logo=opengl)](https://www.opengl.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VbBVXNn0029VbBVXNn)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/amr-reda-79326b27b/)
 
 هذا المستودع يحتوي على الكود المشروح في الجزء الثاني من سلسلة تعلم OpenGL. نركز هنا على كيفية رسم الأشكال الهندسية والتحكم في خصائص العرض (Polygon Modes).
-> [!IMPORTANT]
-> هذا الدرس يعتمد على ما تم شرحه في **[الفيديو السابق (إعداد البيئة)](https://youtu.be/QvtrwI4iH_Q?si=fv_PC1GQaX9YQ20O)**. تأكد من مشاهدته أولاً لتجهيز مكتبات GLUT/FreeGLUT.
+
 ---
 
-## 📸 مخرجات الكود (Current Output)
+## 📺 الفيديوهات السابقة (Course Journey)
 
-توضح الصورة التالية الفرق بين استخدام `GL_LINE_LOOP` و `GL_QUADS`:
+1. **الدرس الأول:** [كيفية إنشاء نافذة ورسم أول نقطة في OpenGL](https://youtu.be/QvtrwI4iH_Q?si=egRrDu-ofcPLNkyY) 💻
+2. **الدرس الثاني:** الرسم المتقدم والتحكم في المضلعات (هذا المستودع).
+
+---
+
+## 📸 مخرجات الكود (Output Screenshot)
+
+توضح الصورة التالية النتيجة النهائية لتشغيل الكود الحالي:
 
 > [!TIP]
-> **ضع صورة الـ Screenshot الخاصة بك هنا لتظهر للمتابعين النتيجة.**
+> **ملاحظة:** تأكد من رفع ملف الصورة باسم `image.png` بجانب هذا الملف ليظهر أدناه.
+> 
 > ![Output Preview](image.png)
 
 ---
@@ -30,12 +38,13 @@
 | `GL_POINT` | رسم النقاط فقط | مفيد لتصحيح مواضع الـ Vertices. |
 | `GL_LINE` | الهيكل السلكي (Wireframe) | رؤية "الهيكل العظمي" للموديل. |
 | `GL_FILL` | التعبئة الكاملة (Solid) | الشكل النهائي الملون. |
-![Polygon Modes](https://learnopengl.com/img/getting-started/polygon_modes.png)
 
+![Polygon Modes](https://learnopengl.com/img/getting-started/polygon_modes.png)
 
 ### 2️⃣ رسم الخطوط والأشكال (Primitives)
 في الكود الحالي، نستخدم `GL_LINE_LOOP` لرسم حدود المربع:
 ![Primitive Types](https://paroj.github.io/gltut/Basics/PrimitiveTypes.png)
+
 ```cpp
 void display() {
     glClear(GL_COLOR_BUFFER_BIT); // تنظيف الشاشة
@@ -53,12 +62,8 @@ void display() {
 
     glFlush(); // تنفيذ الأوامر فوراً
 }
----
 
-### ليه الملف ده احترافي؟
-1. **Badges:** ضفت لك أيقونات ملونة لليوتيوب وإصدار OpenGL بيدي انطباع إن المشروع متعوب عليه.
-2. **Alerts:** استخدمت ميزة `[!IMPORTANT]` و `[!TIP]` الجديدة في GitHub بتخلي النص يظهر ببراويز ملونة (أزرق وأخضر).
-3. **Table:** مقارنة الـ Modes في جدول بتسهل القراءة جداً.
-4. **Primes Image:** إضافة صورة لأنواع الـ Primitives بتخلي المتابع يفهم الفرق بين `LOOP` و `STRIP` بصرياً.
+📢 تواصل معنا (Stay Connected)
+💬 قناة الواتساب (للمناقشات والملفات): انضم إلينا هنا
 
-**هل تريد مني أن أكتب لك رسالة الـ Commit الأولى (First Commit Message) لرفع هذا الملف بشكل احترافي؟**
+👔 حساب LinkedIn (للتواصل المهني): Amr Reda
