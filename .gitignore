@@ -1,0 +1,8 @@
+# ملفات الـ Visual Studio
+.vs/
+Debug/
+Release/
+*.obj
+*.exe
+*.pdb
+*.user
